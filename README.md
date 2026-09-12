@@ -120,9 +120,9 @@ Optional:
 
 ## Documentation
 
-- **Design Document**: `.kiro/specs/travel-planner/design.md` — Architecture, algorithms, data models
-- **Requirements**: `.kiro/specs/travel-planner/requirements.md` — 16 EARS-compliant requirements
-- **Implementation Tasks**: `.kiro/specs/travel-planner/tasks.md` — 20 tasks with dependency graph
+- **Design Document**: [design.md](./docs/design.md) — Architecture, algorithms, data models
+- **Requirements**: [requirements.md](./docs/requirements.md) — 16 EARS-compliant requirements
+- **Implementation Tasks**: [tasks.md](./docs/tasks.md) — 20 tasks with dependency graph
 
 ## Project Structure
 

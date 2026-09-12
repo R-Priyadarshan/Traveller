@@ -10,11 +10,10 @@ travel-planner/
 ├── IMPLEMENTATION_STATUS.md     # Checkpoint summary
 ├── IMPLEMENTATION_COMPLETE.md   # This file
 │
-├── .kiro/specs/
-│   └── travel-planner/
-│       ├── design.md            # Technical architecture & design
-│       ├── requirements.md      # EARS-compliant requirements (16)
-│       └── tasks.md             # Implementation tasks (20) with dependency graph
+├── docs/
+│   ├── design.md            # Technical architecture & design
+│   ├── requirements.md      # EARS-compliant requirements (16)
+│   └── tasks.md             # Implementation tasks (20) with dependency graph
 │
 └── app/
     ├── __init__.py
