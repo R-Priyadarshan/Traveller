@@ -1,0 +1,337 @@
+{
+  "info": {
+    "name": "Travel Planner API",
+    "description": "Comprehensive API tests for Travel Planner multi-agent system",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health & Status",
+      "item": [
+        {
+          "name": "Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/health",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["health"]
+            }
+          }
+        },
+        {
+          "name": "Frontend",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": [""]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Trip Planning",
+      "item": [
+        {
+          "name": "Generate Itinerary - India",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"india for 5 people adventure trip\",\n  \"preferences\": [\"hiking\", \"temples\", \"cultural\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=en&save=true",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "en"
+                },
+                {
+                  "key": "save",
+                  "value": "true"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Generate Itinerary - Japan",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"japan 3 days luxury\",\n  \"preferences\": [\"food\", \"art\", \"shopping\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=en",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "en"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Generate Itinerary - Europe Budget",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"europe 2 weeks budget backpacking\",\n  \"preferences\": [\"museums\", \"nightlife\", \"budget-friendly\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=en",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "en"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Multi-Language Support",
+      "item": [
+        {
+          "name": "Spanish - España",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"españa madrid barcelona 4 dias\",\n  \"preferences\": [\"flamenco\", \"gastronomia\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=es",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "es"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "French - Paris",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"paris 3 jours romantique\",\n  \"preferences\": [\"art\", \"museums\", \"restaurants\"]\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=fr",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "fr"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PDF Export",
+      "item": [
+        {
+          "name": "Export India Itinerary to PDF",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"india 3 days\",\n  \"preferences\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/export-pdf?language=en",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "export-pdf"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "en"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Database - Retrieve Saved",
+      "item": [
+        {
+          "name": "Get All India Itineraries",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/itineraries/India",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "itineraries", "India"]
+            }
+          }
+        },
+        {
+          "name": "Get Specific Itinerary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8000/api/itinerary/{{itinerary_id}}",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "itinerary", "{{itinerary_id}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Error Handling",
+      "item": [
+        {
+          "name": "Empty Query",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"\",\n  \"preferences\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"]
+            }
+          }
+        },
+        {
+          "name": "Invalid Language",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"tokyo 2 days\",\n  \"preferences\": []\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8000/api/plan?language=klingon",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8000",
+              "path": ["api", "plan"],
+              "query": [
+                {
+                  "key": "language",
+                  "value": "klingon"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "itinerary_id",
+      "value": "",
+      "type": "string"
+    }
+  ]
+}

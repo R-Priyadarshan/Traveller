@@ -1,0 +1,14 @@
+fastapi>=0.110.0
+uvicorn>=0.28.0
+langgraph>=0.0.30
+langchain-google-genai>=0.0.9
+langchain-community>=0.0.28
+pydantic>=2.6.0
+scikit-learn>=1.4.0
+numpy>=1.26.0
+python-dotenv>=1.0.0
+tavily-python>=0.3.16
+reportlab>=4.0.9
+pillow>=10.1.0
+sqlalchemy>=2.0.0
+alembic>=1.13.0

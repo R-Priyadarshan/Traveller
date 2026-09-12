@@ -1,0 +1,28 @@
+[project]
+name = "travel-planner"
+version = "0.1.0"
+description = "Multi-agent AI system for travel itinerary planning"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi==0.110.3",
+    "uvicorn[standard]==0.28.0",
+    "langgraph==0.0.30",
+    "langchain-openai==0.1.13",
+    "langchain-community==0.0.28",
+    "pydantic==2.7.1",
+    "scikit-learn==1.5.2",
+    "numpy==1.26.4",
+    "python-dotenv==1.0.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest==7.4.4",
+    "pytest-asyncio==0.23.3",
+    "httpx==0.26.0",
+    "hypothesis==6.98.3",
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
