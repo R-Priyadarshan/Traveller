@@ -1,6 +1,12 @@
 # Travel Planner — Multi-Agent AI Itinerary System
 
-A sophisticated multi-agent AI system that transforms natural-language travel requests into detailed, day-by-day itineraries using LangGraph, OpenAI, and Tavily search.
+**🔴 LIVE NOW! 🚀 [VISIT LIVE DEMO](https://traveller-production.railway.app)**
+
+A sophisticated multi-agent AI system that transforms natural-language travel requests into detailed, day-by-day itineraries using LangGraph, Google Gemini, and Tavily search.
+
+**GitHub:** https://github.com/R-Priyadarshan/Traveller
+
+---
 
 ## Quick Start
 
@@ -8,9 +14,13 @@ A sophisticated multi-agent AI system that transforms natural-language travel re
 
 ```bash
 # Create and populate .env with your API keys
-OPENAI_API_KEY=sk-...
+GEMINI_API_KEY=your_gemini_key_here
 TAVILY_API_KEY=tvly-...
 ```
+
+Get free keys:
+- **Gemini:** https://aistudio.google.com (free tier)
+- **Tavily:** https://tavily.com (1000 free calls/month)
 
 ### 2. Install Dependencies
 
@@ -99,8 +109,8 @@ Health check returning `{"status": "ok"}`.
 ## Configuration
 
 Environment variables (required):
-- `OPENAI_API_KEY`: OpenAI API key
-- `TAVILY_API_KEY`: Tavily search API key
+- `GEMINI_API_KEY`: Google Gemini API key (free tier available)
+- `TAVILY_API_KEY`: Tavily search API key (1000 calls/month free)
 
 Optional:
 - `MAX_RETRIES`: Validation loop retries (default 3)
@@ -182,7 +192,8 @@ gunicorn app.main:app --workers 4 --worker-class uvicorn.workers.UvicornWorker
 
 **"OPENAI_API_KEY not found"**
 - Ensure `.env` file exists with valid key
-- Or set environment variable: `export OPENAI_API_KEY=sk-...`
+- Or set environment variable: `export GEMINI_API_KEY=your_key`
+- Get free key at https://aistudio.google.com
 
 **"No POIs found for destination"**
 - Try more specific destination names
@@ -208,4 +219,4 @@ For issues, check:
 
 ---
 
-**Built with**: FastAPI, LangGraph, Pydantic, scikit-learn, OpenAI, Tavily
+**Built with**: FastAPI, LangGraph, Pydantic, scikit-learn, Google Gemini, Tavily, Railway.app
